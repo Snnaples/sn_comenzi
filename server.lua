@@ -3,7 +3,6 @@ local Proxy = module("vrp", "lib/Proxy")
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP","vrp_comenzi")
 
-
 RegisterCommand("kickrestart", function(player, args)
     if player == 0 then
         local users = vRP.getUsers({})
@@ -12,7 +11,6 @@ RegisterCommand("kickrestart", function(player, args)
         end
     end
 end, false)
-
 
 RegisterCommand('respawn', function(source, args, msg)
   local user_id = vRP.getUserId({source})
@@ -36,11 +34,6 @@ RegisterCommand('respawn', function(source, args, msg)
     TriggerClientEvent('chatMessage', source, "^8Syntax^7: /respawn <user-id>")
   end
 end)
-
-
-
-
-
 
 RegisterCommand('arevive', function(source, args, msg)
   local user_id = vRP.getUserId({source})
@@ -70,5 +63,3 @@ RegisterCommand("noclip", function(player)
     vRPclient.toggleNoclip(player, {})
 end
 end)
-
-
